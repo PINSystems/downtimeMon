@@ -22,18 +22,18 @@ Installation -------------------------
 
 The installation process first makes sure the downtimeMon services aren't running  
 Then it creates the following folders, if they don't already exist:  
-    /etc/downtimeMon  
-    /etc/downtimeMon/logs  
+&nbsp;&nbsp;    /etc/downtimeMon  
+&nbsp;&nbsp;    /etc/downtimeMon/logs  
 It then removes any/all files from /etc/downtimeMon/  
 Then it copies the following files to /etc/downtimeMon/  
-    downtimeMon.py  
-    downtimeMonServer.py  
-    downtimeMon.info.txt  
+&nbsp;&nbsp;    downtimeMon.py  
+&nbsp;&nbsp;    downtimeMonServer.py  
+&nbsp;&nbsp;    downtimeMon.info.txt  
 Then it copies the following files to /etc/systemd/system/  
-    downtimeMon.service  
-    downtimeMonServer.service  
+&nbsp;&nbsp;    downtimeMon.service  
+&nbsp;&nbsp;    downtimeMonServer.service  
 Then it registers and starts the services:  
-    downtimeMon  
-    downtimeMonServer  
+&nbsp;&nbsp;    downtimeMon  
+&nbsp;&nbsp;    downtimeMonServer  
       
-<img width="692" height="993" alt="ServerUI" src="https://github.com/user-attachments/assets/ac2cc3e3-b22b-4203-80f8-e3219d28b0d2" />
+<img width="346" height="495" alt="ServerUI" src="https://github.com/user-attachments/assets/ac2cc3e3-b22b-4203-80f8-e3219d28b0d2" />

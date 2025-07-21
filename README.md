@@ -19,7 +19,7 @@ Installation -------------------------
 4) Open a shell, change to the directory fronm step 2
 5) Execute:  sudo python3 downtimeMon.install.py
 6) After execution is verified, the folder created in step 2 can be deleted
-
+  
 The installation process:
 - Makes sure the downtimeMon services aren't running  
 - Creates the following folders, if they don't already exist:  

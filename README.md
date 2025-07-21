@@ -20,21 +20,20 @@ Installation -------------------------
 5) Execute:  sudo python3 downtimeMon.install.py
 6) After execution is verified, the folder created in step 2 can be deleted
 
-The installation process first makes sure the downtimeMon services aren't running
-Then it creates the following folders, if they don't already exist:
-    /etc/downtimeMon
-    /etc/downtimeMon/logs
-
-It then removes any/all files from /etc/downtimeMon/
-Then it copies the following files to /etc/downtimeMon/
-    downtimeMon.py
-    downtimeMonServer.py
-    downtimeMon.info.txt
-Then it copies the following files to /etc/systemd/system/
-    downtimeMon.service
-    downtimeMonServer.service
-Then it registers and starts the services:
-    downtimeMon
-    downtimeMonServer
-    
+The installation process first makes sure the downtimeMon services aren't running  
+Then it creates the following folders, if they don't already exist:  
+    /etc/downtimeMon  
+    /etc/downtimeMon/logs  
+It then removes any/all files from /etc/downtimeMon/  
+Then it copies the following files to /etc/downtimeMon/  
+    downtimeMon.py  
+    downtimeMonServer.py  
+    downtimeMon.info.txt  
+Then it copies the following files to /etc/systemd/system/  
+    downtimeMon.service  
+    downtimeMonServer.service  
+Then it registers and starts the services:  
+    downtimeMon  
+    downtimeMonServer  
+      
 <img width="692" height="993" alt="ServerUI" src="https://github.com/user-attachments/assets/ac2cc3e3-b22b-4203-80f8-e3219d28b0d2" />

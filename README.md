@@ -23,7 +23,7 @@ Installation -------------------------
 The installation process first makes sure the downtimeMon services aren't running
 Then it creates the following folders, if they don't already exist:
     /etc/downtimeMon
-    /etc/downtimeMon/logs<img width="692" height="993" alt="ServerUI" src="https://github.com/user-attachments/assets/85923fc4-e990-4a01-a11b-d32ddd56e845" />
+    /etc/downtimeMon/logs
 
 It then removes any/all files from /etc/downtimeMon/
 Then it copies the following files to /etc/downtimeMon/
@@ -36,4 +36,5 @@ Then it copies the following files to /etc/systemd/system/
 Then it registers and starts the services:
     downtimeMon
     downtimeMonServer
+    
 <img width="692" height="993" alt="ServerUI" src="https://github.com/user-attachments/assets/ac2cc3e3-b22b-4203-80f8-e3219d28b0d2" />

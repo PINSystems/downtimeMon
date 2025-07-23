@@ -10,7 +10,7 @@ Default URL:  http://[IpAddress]:8899
 Default Logs Folder:  /etc/downtimeMon/logs  
 The http service reads the logs and presents the data.  
 
-downtimeMon requires very few resource. It should operate properly on any Raspberry Pi or linux based machine with Python installed.
+downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
 Installation -------------------------
 1) Log in as a sudo user.  

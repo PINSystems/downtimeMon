@@ -5,10 +5,10 @@ The use case that spawned downtimeMon is as a home appliance.  After being on va
 
 donwtimeMon is a simple Python based service that executes every n seconds. When it executes, it reads the last execution time and conmpares it to the current time.  If the difference is more than the "interval" setting (+ two seconds), an outage has been encountered. If an outage is encountered, it's logged. Before sleeping, the current execution time is stored for the next execution.
 
-You can review data via the downtimeMon http service or the logs.
-Default URL:  http://<IpAddress>:8899
-Default Logs Folder:  /etc/downtimeMon/logs
-The http service reads the logs and presents the data.
+You can review data via the downtimeMon http service or the logs.  
+Default URL:  http://<IpAddress>:8899  
+Default Logs Folder:  /etc/downtimeMon/logs  
+The http service reads the logs and presents the data.  
 
 downtimeMon requires very few resource. It should operate properly on any Raspberry Pi or linux based machine with Python installed.
 

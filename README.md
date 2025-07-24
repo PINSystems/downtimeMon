@@ -48,6 +48,6 @@ The installation process (assuming default setting values):
 &nbsp;&nbsp;    downtimeMon  
 &nbsp;&nbsp;    downtimeMonServer  
 
-doewntimeMon Dashboard
+downtimeMon Dashboard..
 <img width="450" alt="downtimeMon_Dashboard" src="https://github.com/user-attachments/assets/b78dd73d-338c-442b-b719-10dbbb6187ae" />
 

@@ -1,0 +1,8 @@
+{"settings":{
+    "installDir":"/etc/downtimeMon",
+    "logsDirectory": "/etc/downtimeMon/logs",
+    "lastExecutionFile": "/etc/downtimeMon/lastExecution",
+    "testIntervalSecs":"300",
+    "executionLogLen": "25",
+    "serverHttpPort": "8899"
+}}

@@ -1,0 +1,10 @@
+[Unit]
+Description=Determine when and how long the system has been down.
+
+[Service]
+Type=simple
+ExecStart=python3 <<<installDir>>>/downtimeMon.py
+WorkingDirectory=<<<installDir>>>
+
+[Install]
+WantedBy=multi-user.target

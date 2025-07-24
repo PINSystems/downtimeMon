@@ -1,0 +1,61 @@
+#-----------------------------------------------
+# INSTALLATION
+# Notes: The default installation prepares and places files in /etc/downtimeMon
+#        Sudo permissions are required during installation
+#-----------------------------------------------
+1) Create a working directory to house the distribution files
+2) Copy/extract the distribution files to this working directory
+3) Update downtimeMon.settings.json if settings changes are desired
+    Note: This settings file is used by installation logic and the app Sservices
+4) Execute: 
+    sudo python3 <path_to_working_directory>/downtimeMon.install.py
+5) After the installation completes, and execution verified, the working directory can be removed.
+
+downtimeMon.install.py...
+a) stops the services (if running)
+b) creates the required directories, if they don't exist:
+	Default ---
+	/etc/downtimeMon
+	/etc/downtimeMon/logs
+c) Creates downtimeMon.service from downtimeMon.service.template and your settings
+d) Creates downtimeMonServer.service from downtimeMonServer.service.template and your settings
+e) Copies the required files:
+	downtimeMon.info.txt (this file)
+	psPythonProcs.py
+	downtimeMon.py
+	downtimeMonServer.py
+	downtimeMon.service
+	downtimeMonServer.service
+f) registers and starts the services:
+    	downtimeMon 
+	downtimeMonServer
+
+
+#-----------------------------------------------
+# ACCESSING THE DATA
+#-----------------------------------------------
+The server service is configured by default to run on port 8899
+If a change is desired, update downtimeMonServer.py
+
+If your Pi is accessible via machine name, access the server via:
+  http://<machineName>:8899
+If your Pi isn't accessible by name, get the IP address using ifconfig and use:
+  http://<ipAddress>:8899
+
+
+#-----------------------------------------------
+# SERVICE COMMANDS
+#-----------------------------------------------
+
+# Start the services
+sudo systemctl start downtimeMon.service
+sudo systemctl start downtimeMonServer.service
+
+# Stop the service
+sudo systemctl stop downtimeMon.service
+sudo systemctl stop downtimeMonServer.service
+
+# Get the service status
+sudo systemctl status downtimeMon.service
+sudo systemctl status downtimeMonServer.service
+

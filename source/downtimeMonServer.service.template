@@ -1,0 +1,10 @@
+[Unit]
+Description=Display downtimeMon data.
+
+[Service]
+Type=simple
+ExecStart=python3 <<<installDir>>>/downtimeMonServer.py
+WorkingDirectory=<<<installDir>>>
+
+[Install]
+WantedBy=multi-user.target

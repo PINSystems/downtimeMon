@@ -34,8 +34,8 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 The installation process (assuming default setting values):
 - Makes sure the downtimeMon services aren't running  
 - Creates the following folders, if they don't already exist:  
-&nbsp;&nbsp;    [installDir] 
-&nbsp;&nbsp;    [logsDirectory] 
+&nbsp;&nbsp;    [installDir]   
+&nbsp;&nbsp;    [logsDirectory]   
 - Removes any/all files from [installDir]  
 - Copies the following files to [installDir]  
 &nbsp;&nbsp;    downtimeMon.settings.json  

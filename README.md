@@ -1,5 +1,5 @@
 # downtimeMon
-Python system downtime tracking.
+### Python system downtime tracking.
 
 The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.?  I was originally thinking of building an AC powered appliance, then realized I have at least one.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. 
 
@@ -12,7 +12,7 @@ The http service reads the logs and presents the data.
 
 downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
-Installation -------------------------
+### Installation -------------------------
 1) Log in as a sudo user.  
 2) Create a directory in the home directory.  
 3) Copy/transfer the distribution files to the directory created in step 2  
@@ -48,6 +48,6 @@ The installation process (assuming default setting values):
 &nbsp;&nbsp;    downtimeMon  
 &nbsp;&nbsp;    downtimeMonServer  
 
-downtimeMon Dashboard..
+### downtimeMon Dashboard...  
 <img width="450" alt="downtimeMon_Dashboard" src="https://github.com/user-attachments/assets/b78dd73d-338c-442b-b719-10dbbb6187ae" />
 

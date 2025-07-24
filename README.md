@@ -47,5 +47,6 @@ The installation process (assuming default setting values):
 - Registers and starts the services:  
 &nbsp;&nbsp;    downtimeMon  
 &nbsp;&nbsp;    downtimeMonServer  
-      
-<img width="346" height="495" alt="ServerUI" src="https://github.com/user-attachments/assets/ac2cc3e3-b22b-4203-80f8-e3219d28b0d2" />
+        
+<img width="637" height="1116" alt="downtimeMon_Dashboard" src="https://github.com/user-attachments/assets/b78dd73d-338c-442b-b719-10dbbb6187ae" />
+

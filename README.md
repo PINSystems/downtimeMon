@@ -41,7 +41,7 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 &nbsp;&nbsp;    psPythonProcs.py  
 &nbsp;&nbsp;    downtimeMon.settings.json  
 &nbsp;&nbsp;    downtimeMon.py  
-&nbsp;&nbsp;    downtimeMonServer.py
+&nbsp;&nbsp;    downtimeMonServer.py  
 &nbsp;&nbsp;    downtimeMon.history.txt  
 - Generates service files from the following and places the service files in /etc/systemd/system/  
 &nbsp;&nbsp;    downtimeMon.service.template  

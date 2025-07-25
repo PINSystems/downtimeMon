@@ -37,7 +37,7 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 &nbsp;&nbsp;    [installDir]   
 &nbsp;&nbsp;    [logsDirectory]   
 - Removes any/all files from [installDir]  
-- Copies the following files to [installDir]
+- Copies the following files to [installDir]  
 &nbsp;&nbsp;    psPythonProcs.py  
 &nbsp;&nbsp;    downtimeMon.settings.json  
 &nbsp;&nbsp;    downtimeMon.py  

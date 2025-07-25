@@ -8,7 +8,7 @@ donwtimeMon is a Python based service that executes every n seconds. When it exe
 You can review data via the downtimeMon http service or the logs.  
 Default URL:  http://[IpAddress]:8899  
 Default Logs Folder:  /etc/downtimeMon/logs  
-The http service reads the logs and presents the data.  
+The http service merely reads the log files and presents the data.  
 
 downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
@@ -18,20 +18,20 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 3) Copy/transfer the distribution files to the directory created in step 2  
 4) If changing any app settings, they can be found in downtimeMon.settings.json.  
    This file is used by downtimeMon.install.py, downtimeMon.py and downtimeMonServer.py  
-   Settings should be updated before executing the install script as the "installDir" setting is used to beuild the service files.  
+   Settings should be updated before executing the install script as the "installDir" setting is used to build the service files.  
    Default Setting Values:  
-    "installDir":"/etc/downtimeMon",  
-    "logsDirectory": "/etc/downtimeMon/logs",  
-    "lastExecutionFile": "/etc/downtimeMon/lastExecution",  
-    "testIntervalSecs":"300",  
-    "executionLogLen": "25",  
-    "serverHttpPort": "8899"  
+     "installDir":"/etc/downtimeMon",  
+     "logsDirectory": "/etc/downtimeMon/logs",  
+     "lastExecutionFile": "/etc/downtimeMon/lastExecution",  
+     "testIntervalSecs":"300",  
+     "executionLogLen": "25",  
+     "serverHttpPort": "8899"  
 5) Open a shell, change to the directory fronm step 2  
 6) Execute:  sudo python3 downtimeMon.install.py  
 7) After execution is verified, the folder created in step 2 can be deleted  
   
   
-The installation process (assuming default setting values):
+**The installation process (assuming default setting values):**
 - Makes sure the downtimeMon services aren't running  
 - Creates the following folders, if they don't already exist:  
 &nbsp;&nbsp;    [installDir]   
@@ -42,7 +42,7 @@ The installation process (assuming default setting values):
 &nbsp;&nbsp;    downtimeMon.py  
 &nbsp;&nbsp;    downtimeMonServer.py  
 &nbsp;&nbsp;    downtimeMon.info.txt  
-- Generates the following files and copies them to /etc/systemd/system/  
+- Generates the following files and places them in /etc/systemd/system/  
 &nbsp;&nbsp;    downtimeMon.service  
 &nbsp;&nbsp;    downtimeMonServer.service  
 - Registers and starts the services:  

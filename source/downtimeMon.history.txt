@@ -1,0 +1,5 @@
+???
+v1.0.0.1    - Added error handling to script load logic (all scripts)
+            - Added string/int/object validation methods to psPythonProcs and integrated into script load logic.
+7/24/2025   
+v1.0.0.0    - Initial release

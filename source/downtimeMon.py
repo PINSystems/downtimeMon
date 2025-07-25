@@ -5,19 +5,52 @@ import time
 
 import psPythonProcs
 
+_dtMonVer = '1.0.1'
+
+try:
+    if psPythonProcs.libExists() != True:
+        print("psPythonProcs not available - exiting (1)")
+        exit(100)
+except:
+    print("psPythonProcs not available - exiting (2)")
+    exit(100)
+
 #--------------------------------------------------------------------------
 # --- CONFIGURATION
 #--------------------------------------------------------------------------
-_dtMonVer = '1.0.0'
-
 _scriptDir = os.path.dirname(os.path.abspath(__file__))
+if not psPythonProcs.objectPopulated_String("_scriptDir", _scriptDir):
+    print("_scriptDir not populated - exiting")
+    exit(100)
+
 _appSettings = psPythonProcs.PsPythonSettingsFile(_scriptDir + "/downtimeMon.settings.json")
+if not psPythonProcs.objectExists("_appSettings", _appSettings):
+    print("_appSettings not populated - exiting")
+    exit(100)
 
 _lastExecutionFile = _appSettings.setting_Get("lastExecutionFile")
-_executionLogFile =  _appSettings.setting_Get("logsDirectory") + "/executions.log"
-_downtimeLogFile = _appSettings.setting_Get("logsDirectory") + "/downtime.log" 
+if not psPythonProcs.objectPopulated_String("_lastExecutionFile", _lastExecutionFile):
+    print("_lastExecutionFile not populated - exiting")
+    exit(100)
+
+_logsDir = _appSettings.setting_Get("logsDirectory")
+if not psPythonProcs.objectPopulated_String("_logsDir", _logsDir):
+    print("_logsDir not populated - exiting")
+    exit(100)
+
+_executionLogFile = _logsDir + "/executions.log"
+_downtimeLogFile = _logsDir + "/downtime.log" 
+
 _intervalSecs =int(_appSettings.setting_Get("testIntervalSecs"))  # Execute every n seconds
+if not psPythonProcs.objectPopulated_Int("_intervalSecs", _intervalSecs):
+    print("_intervalSecs not populated - exiting")
+    exit(100)
+
 _executionLogLen = int(_appSettings.setting_Get("executionLogLen"))
+if not psPythonProcs.objectPopulated_Int("_executionLogLen", _executionLogLen):
+    print("_executionLogLen not populated - exiting")
+    exit(100)
+
 
 statusMsg = 'Launching downtimeMon (v' + _dtMonVer + ')... \n'
 statusMsg += '   Execution Directory: "' + _scriptDir + '"\n'

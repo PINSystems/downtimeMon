@@ -6,22 +6,41 @@ import time
 
 import psPythonProcs
 
-_scriptDir = os.path.dirname(os.path.abspath(__file__))
-_appSettings = psPythonProcs.PsPythonSettingsFile(_scriptDir + "/downtimeMon.settings.json")
-_installDir = _appSettings.setting_Get("installDir")
-_logsDir = _appSettings.setting_Get("logsDirectory")
-result=False
+try:
+    if psPythonProcs.libExists() != True:
+        print("psPythonProcs not available - exiting (1)")
+        exit(100)
+except:
+    print("psPythonProcs not available - exiting (2)")
+    exit(100)
 
-testEmpty = _appSettings.setting_Get("doesnt_exist")
+_scriptDir = os.path.dirname(os.path.abspath(__file__))
+if not psPythonProcs.objectPopulated_String("_scriptDir", _scriptDir):
+    print("_scriptDir not populated - exiting")
+    exit(100)
+
+_appSettings = psPythonProcs.PsPythonSettingsFile(_scriptDir + "/downtimeMon.settings.json")
+if not psPythonProcs.objectExists("_appSettings", _appSettings):
+    print("_appSettings not populated - exiting")
+    exit(100)
+
+_installDir = _appSettings.setting_Get("installDir")
+if not psPythonProcs.objectPopulated_String("_installDir", _installDir):
+    print("_installDir not populated - exiting")
+    exit(100)
+
+_logsDir = _appSettings.setting_Get("logsDirectory")
+if not psPythonProcs.objectPopulated_String("_logsDir", _logsDir):
+    print("_logsDir not populated - exiting")
+    exit(100)
+
+result=False
 
 statusMsg = 'Launching downtimeMon installation... \n' 
 statusMsg += '   Installation directory: "' + _installDir + '"\n'
 statusMsg += '   Logs directory: "' + _logsDir + '"\n'
-if testEmpty == None:
-    statusMsg += '   Test empty: ' + str(testEmpty)
-else:
-    statusMsg += '   Test empty: "' + testEmpty + '"'
 print(statusMsg)
+
 
 
 #----------------------------------------------------
@@ -56,10 +75,6 @@ for filename in os.listdir(_installDir):
 # --- Copy the required files
 #----------------------------------------------------
 
-result = psPythonProcs.file_copy('./downtimeMon.info.txt', _installDir + '/downtimeMon.info.txt')
-if not result:
-    sys.exit('Aborting install!')
-
 result = psPythonProcs.file_copy('./downtimeMon.settings.json', _installDir + '/downtimeMon.settings.json')
 if not result:
     sys.exit('Aborting install!')
@@ -73,6 +88,10 @@ if not result:
     sys.exit('Aborting install!')
 
 result = psPythonProcs.file_copy('./downtimeMonServer.py', _installDir + '/downtimeMonServer.py')
+if not result:
+    sys.exit('Aborting install!')
+
+result = psPythonProcs.file_copy('./downtimeMon.history.txt', _installDir + '/downtimeMon.history.txt')
 if not result:
     sys.exit('Aborting install!')
 

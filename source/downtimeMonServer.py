@@ -6,14 +6,39 @@ import socketserver
 
 import psPythonProcs
 
-_dtMonVer = '1.0.0'
+_dtMonVer = '1.0.1'
+
+try:
+    if psPythonProcs.libExists() != True:
+        print("psPythonProcs not available - exiting (1)")
+        exit(100)
+except:
+    print("psPythonProcs not available - exiting (2)")
+    exit(100)
 
 _scriptDir = os.path.dirname(os.path.abspath(__file__))
-_appSettings = psPythonProcs.PsPythonSettingsFile(_scriptDir + "/downtimeMon.settings.json")
+if not psPythonProcs.objectPopulated_String("_scriptDir", _scriptDir):
+    print("_scriptDir not populated - exiting")
+    exit(100)
 
-_executionLogFile =  _appSettings.setting_Get("logsDirectory") + "/executions.log"
-_downtimeLogFile = _appSettings.setting_Get("logsDirectory") + "/downtime.log" 
+_appSettings = psPythonProcs.PsPythonSettingsFile(_scriptDir + "/downtimeMon.settings.json")
+if not psPythonProcs.objectExists("_appSettings", _appSettings):
+    print("_appSettings not populated - exiting")
+    exit(100)
+
+_logsDir = _appSettings.setting_Get("logsDirectory")
+if not psPythonProcs.objectPopulated_String("_logsDir", _logsDir):
+    print("_logsDir not populated - exiting")
+    exit(100)
+
+_executionLogFile =  _logsDir + "/executions.log"
+_downtimeLogFile = _logsDir + "/downtime.log" 
+
 _serverPort = int(_appSettings.setting_Get("serverHttpPort"))
+if not psPythonProcs.objectPopulated_Int("_serverPort", _serverPort):
+    print("_serverPort not populated - exiting")
+    exit(100)
+
 
 statusMsg = 'Launching downtimeMonServer... \n'
 statusMsg += '   Executions log file: "' + _executionLogFile + '" \n'

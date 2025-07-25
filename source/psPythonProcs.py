@@ -3,6 +3,9 @@ import os
 import shutil
 import subprocess
 
+def libExists():
+    return True
+
 def dir_create(dirPath):
     if not os.path.exists(dirPath):
         try:
@@ -30,6 +33,27 @@ def file_copy(src, dst):
         print(f"An error occurred copying '{src}' to '{dst}': \n{e}")
         return False
     return True
+
+
+def objectExists(objTitle, obj):
+    if obj == None:
+        return False
+    return True
+
+def objectPopulated_String(objTitle, obj):
+    if obj == None:
+        return False
+    if len(str(obj)) == 0:
+        return False
+    return True
+
+def objectPopulated_Int(objTitle, obj):
+    if obj == None:
+        return False
+    if isinstance(obj, int):
+        return True
+    else:
+        return False
 
 
 def service_defs_reload():

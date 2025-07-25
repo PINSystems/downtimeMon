@@ -37,14 +37,14 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 &nbsp;&nbsp;    [installDir]   
 &nbsp;&nbsp;    [logsDirectory]   
 - Removes any/all files from [installDir]  
-- Copies the following files to [installDir]  
+- Copies the following files to [installDir]
+&nbsp;&nbsp;    psPythonProcs.py  
 &nbsp;&nbsp;    downtimeMon.settings.json  
 &nbsp;&nbsp;    downtimeMon.py  
 &nbsp;&nbsp;    downtimeMonServer.py  
-&nbsp;&nbsp;    downtimeMon.info.txt  
-- Generates the following files and places them in /etc/systemd/system/  
-&nbsp;&nbsp;    downtimeMon.service  
-&nbsp;&nbsp;    downtimeMonServer.service  
+- Generates service files from the following and places the service files in /etc/systemd/system/  
+&nbsp;&nbsp;    downtimeMon.service.template  
+&nbsp;&nbsp;    downtimeMonServer.service.template  
 - Registers and starts the services:  
 &nbsp;&nbsp;    downtimeMon  
 &nbsp;&nbsp;    downtimeMonServer  

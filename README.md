@@ -3,12 +3,12 @@
 
 The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.? Do we need to throw food out? I was originally thinking of building an AC powered appliance (analog clock/calendar), then realized I have at least one.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. Enter downimeMon.
 
-donwtimeMon is a Python based service that executes every n seconds. When it executes, it reads the last execution time and compares it to the current time.  If the difference is more than the "interval" setting (+ two seconds), an outage has been encountered. If an outage is encountered, it's logged. Then the current execution time is stored for the next execution.
+downtimeMon is a Python based service that executes every n seconds. When it executes, it reads the last execution time and compares it to the current time.  If the difference is more than the "interval" setting (+ two seconds), an outage has been encountered. If an outage is encountered, it's logged. Then the current execution time is stored for the next execution.
 
 You can review data via the downtimeMon http service or the logs.  
+The dowentimeMon http service reads the log files and presents the data.  
 Default URL:  http://[IpAddress]:8899  
 Default Logs Folder:  /etc/downtimeMon/logs  
-The http service merely reads the log files and presents the data.  
 
 downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
@@ -51,5 +51,5 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
 &nbsp;&nbsp;    downtimeMonServer  
 
 ### downtimeMon Dashboard...  
-<img width="450" alt="downtimeMon_Dashboard" src="https://github.com/user-attachments/assets/b78dd73d-338c-442b-b719-10dbbb6187ae" />
+<img width="500" alt="downtimeMon_Dashboard" src="https://github.com/user-attachments/assets/b78dd73d-338c-442b-b719-10dbbb6187ae" />
 

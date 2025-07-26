@@ -1,7 +1,7 @@
 # downtimeMon
 ### Python system downtime tracking.
 
-The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.? Do we need to throw food out? I was originally thinking of building an AC powered appliance (analog clock/calendar), then realized I have at least one.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. Enter downimeMon.
+The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.? Do we need to throw food out? I was originally thinking of building an AC powered appliance (analog clock/calendar), then realized I have what I need.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. Enter downimeMon.
 
 downtimeMon is a Python based service that executes every n seconds. When it executes, it reads the last execution time and compares it to the current time.  If the difference is more than the "interval" setting (+ two seconds), an outage has been encountered. If an outage is encountered, it's logged. Then the current execution time is stored for the next execution.
 
@@ -12,6 +12,7 @@ Default Logs Folder:  /etc/downtimeMon/logs
 
 downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
+
 ### Installation -------------------------
 1) Log in as a sudo user.  
 2) Create a directory in the home directory.  
@@ -20,12 +21,12 @@ downtimeMon requires very few resources. It should operate properly on any Raspb
    This file is used by downtimeMon.install.py, downtimeMon.py and downtimeMonServer.py  
    Settings should be updated before executing the install script as the "installDir" setting is used to build the service files.  
    Default Setting Values:  
-     "installDir":"/etc/downtimeMon",  
-     "logsDirectory": "/etc/downtimeMon/logs",  
-     "lastExecutionFile": "/etc/downtimeMon/lastExecution",  
-     "testIntervalSecs":"300",  
-     "executionLogLen": "25",  
-     "serverHttpPort": "8899"  
+   &nbsp;&nbsp;  "installDir":"/etc/downtimeMon",  
+   &nbsp;&nbsp;  "logsDirectory": "/etc/downtimeMon/logs",  
+   &nbsp;&nbsp;  "lastExecutionFile": "/etc/downtimeMon/lastExecution",  
+   &nbsp;&nbsp;  "testIntervalSecs":"300",  
+   &nbsp;&nbsp;  "executionLogLen": "25",  
+   &nbsp;&nbsp;  "serverHttpPort": "8899"  
 5) Open a shell, change to the directory fronm step 2  
 6) Execute:  sudo python3 downtimeMon.install.py  
 7) After execution is verified, the folder created in step 2 can be deleted  

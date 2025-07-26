@@ -122,9 +122,6 @@ def log_execution(executionTs):
 
     
 def store_ExecutionTs(executionTs):   
-    # Delete the file, if existing   
-    #if os.path.exists(_lastExecutionFile):
-    #    os.remove(_lastExecutionFile)
     with open(_lastExecutionFile, 'w') as f:
         f.write(executionTs.isoformat())    
 

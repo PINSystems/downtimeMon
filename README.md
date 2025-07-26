@@ -12,9 +12,6 @@ The http service merely reads the log files and presents the data.
 
 downtimeMon requires very few resources. It should operate properly on any Raspberry Pi or linux based machine with Python3 installed.
 
-**NOTE: ONLY DOWNLOAD THE "Main" BRANCH FOR USE.**  
-**ANY/ALL OTHER BRANCHES ARE FOR DEVELOPMENT PURPOSES ONLY.**
-
 ### Installation -------------------------
 1) Log in as a sudo user.  
 2) Create a directory in the home directory.  

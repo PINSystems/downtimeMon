@@ -1,7 +1,7 @@
 # downtimeMon
 ### Python system downtime tracking.
 
-The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.? Do we need to throw food out? I was originally thinking of building an AC powered appliance (analog clock/calendar), then realized I have at least one.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. Enter downimeMon.
+The use case that spawned downtimeMon is as a home appliance.  After being on vacation, we returned to a beeping freezer and flashing clocks. I could determine what time of day the power turned back on, but not how long it had been off.  Was it off for two hours, 14 hours, 26 hours, etc.? Do we need to throw food out? I was originally thinking of building an AC powered appliance (analog clock/calendar), then realized I have what I need.  I have a Raspberry Pi that isn't on a UPS, so it shuts down during a power outage and starts back up when power is available. Enter downimeMon.
 
 donwtimeMon is a Python based service that executes every n seconds. When it executes, it reads the last execution time and compares it to the current time.  If the difference is more than the "interval" setting (+ two seconds), an outage has been encountered. If an outage is encountered, it's logged. Then the current execution time is stored for the next execution.
 
